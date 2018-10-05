@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.systema.glossary.service.phrase.PhraseService;
 import com.systema.glossary.service.phrase.model.Phrase;
@@ -23,7 +24,10 @@ public class PhraseRestController {
 
 	@RequestMapping(value = "/phrases", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Phrase> getAllPhrases() {
+	public List<Phrase> getPhraseListBySearchText(@RequestParam(value = "search") Optional<String> searchString) {
+		if (searchString.isPresent()) {
+			return phraseService.getPhraseListByTextMatch(searchString.get());
+		}
 		return phraseService.getAllPhrases();
 	}
 
@@ -32,12 +36,6 @@ public class PhraseRestController {
 	public Phrase getPhraseById(@PathVariable("id") long id) {
 		return phraseService.getPhraseById(id);
 	}
-
-//	@RequestMapping(value = "/phrases", method = RequestMethod.GET)
-//	@ResponseBody
-//	public List<Phrase> getPhraseListBySearchText(@RequestParam(value = "search") String searchString) {
-//		return phraseService.getPhraseListByTextMatch(searchString);
-//	}
 
 	@RequestMapping(value = "/phrases", method = RequestMethod.POST)
 	@ResponseBody
