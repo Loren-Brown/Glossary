@@ -33,11 +33,11 @@ public class PhraseRestController {
 		return phraseService.getPhraseById(id);
 	}
 
-	@RequestMapping(value = "/phrases", method = RequestMethod.GET)
-	@ResponseBody
-	public List<Phrase> getPhraseListBySearchText(@RequestParam(value = "search") String searchString) {
-		return phraseService.getPhraseListByTextMatch(searchString);
-	}
+//	@RequestMapping(value = "/phrases", method = RequestMethod.GET)
+//	@ResponseBody
+//	public List<Phrase> getPhraseListBySearchText(@RequestParam(value = "search") String searchString) {
+//		return phraseService.getPhraseListByTextMatch(searchString);
+//	}
 
 	@RequestMapping(value = "/phrases", method = RequestMethod.POST)
 	@ResponseBody
