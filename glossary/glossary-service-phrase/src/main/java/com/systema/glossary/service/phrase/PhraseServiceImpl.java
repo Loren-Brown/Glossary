@@ -11,22 +11,42 @@ import com.systema.glossary.service.phrase.model.Phrase;
 public class PhraseServiceImpl implements PhraseService {
 
 	public Phrase createPhrase(Phrase phrase) {
-		return new Phrase();
+		return phrase;
 	}
-	
+
 	public void deletePhrase(Long id) {
 		return;
 	}
 
 	public List<Phrase> getAllPhrases() {
-		return new ArrayList<Phrase>();
+		List<Phrase> tempList = new ArrayList<Phrase>();
+		tempList.add(new Phrase(1L, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
+		tempList.add(new Phrase(2L, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
+		tempList.add(new Phrase(3L, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
+
+		return tempList;
 	}
 
 	public Phrase getPhraseById(Long id) {
-		return new Phrase();
+		Phrase tempPhrase = new Phrase(id, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger.");
+
+		return tempPhrase;
 	}
 
 	public List<Phrase> getPhraseListByTextMatch(String searchText) {
-		return new ArrayList<Phrase>();
+
+		List<Phrase> tempList = new ArrayList<Phrase>();
+		tempList.add(new Phrase(1L, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
+		tempList.add(new Phrase(2L, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
+		tempList.add(new Phrase(3L, "IDE", "Integrated Development Dnvironment",
+				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
+
+		return tempList;
 	}
 }
