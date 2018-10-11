@@ -2,7 +2,7 @@ package com.systema.glossary.service.phrase;
 
 import java.util.List;
 
-import com.systema.glossary.service.phrase.model.Phrase;
+import com.systema.glossary.model.phrase.Phrase;
 
 public interface PhraseService {
 	

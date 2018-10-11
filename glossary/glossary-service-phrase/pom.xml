@@ -19,6 +19,20 @@
 	</properties>
 	<dependencies>
 		<!-- ######################################## -->
+		<!-- GLOSSARY -->
+		<!-- ######################################## -->
+		<dependency>
+			<groupId>com.systema.glossary</groupId>
+			<artifactId>glossary-model-phrase</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.systema.glossary</groupId>
+			<artifactId>glossary-service-database-phrase</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- ######################################## -->
 		<!-- SPRING -->
 		<!-- ######################################## -->
 		<dependency>

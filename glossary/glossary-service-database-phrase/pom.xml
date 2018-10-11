@@ -10,44 +10,32 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>glossary-service-rest-phrase</artifactId>
+	<artifactId>glossary-service-database-phrase</artifactId>
 
-	<name>glossary-service-rest-phrase</name>
+	<name>glossary-service-database-phrase</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<start-class>Application</start-class>
 	</properties>
 	<dependencies>
-		<!-- ######################################## -->
-		<!-- TOMCAT -->
-		<!-- ######################################## -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- ######################################## -->
-		<!-- SERVLET -->
-		<!-- ######################################## -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- ######################################## -->
 		<!-- GLOSSARY -->
 		<!-- ######################################## -->
 		<dependency>
 			<groupId>com.systema.glossary</groupId>
-			<artifactId>glossary-service-phrase</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.systema.glossary</groupId>
 			<artifactId>glossary-model-phrase</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+
+		</dependency>
+
+		<!-- ######################################## -->
+		<!-- MYBATIS -->
+		<!-- ######################################## -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 
 		<!-- ######################################## -->
@@ -55,7 +43,15 @@
 		<!-- ######################################## -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- ######################################## -->
+		<!-- SQL CONNECTOR -->
+		<!-- ######################################## -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -70,13 +66,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 </project>

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Optional;
 
+import com.systema.glossary.model.phrase.Phrase;
 import com.systema.glossary.service.phrase.PhraseService;
-import com.systema.glossary.service.phrase.model.Phrase;
 
 @RestController
 @RequestMapping("/glossary/v1")
