@@ -17,6 +17,8 @@
 	<context:component-scan
 		base-package="com.systema" />
 
+	
+
 
 	<!-- =================== MyBatis (DataSource) ================== -->
 	<bean name="dataSource"
@@ -42,6 +44,13 @@
 	<bean id="phraseDao"
 		class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-		<property name="mapperInterface" value="com.systema.glossary.service.database.phrase.dao.PhraseDao" />
+		<property name="mapperInterface"
+			value="com.systema.glossary.service.database.phrase.dao.PhraseDao" />
+	</bean>
+
+	<!-- =================== Phrase Data Service (DAO) =================================== -->
+	<bean id="phrase-data-service"
+		class="com.systema.glossary.service.database.PhraseDataService">
+		<property name="phraseDao" ref="phraseDao" />
 	</bean>
 </beans>

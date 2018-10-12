@@ -4,16 +4,20 @@ import java.util.List;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
+import org.mybatis.spring.annotation.MapperScan;
 
 import com.systema.glossary.model.phrase.Phrase;
-import com.systema.glossary.service.database.phrase.dao.PhraseDao;
+import com.systema.glossary.service.database.PhraseDataService;
 
+@ComponentScan(basePackages = { "com.systema.glossary" })
+//@MapperScan("com.systema.glossary.service.database")
 @Service("phrase-service")
 public class PhraseServiceImpl implements PhraseService {
 	
-	@Autowired
-	public PhraseDao phraseDao;
+	@Autowired(required=false)
+	public PhraseDataService phraseDataService;
 
 	public Phrase createPhrase(Phrase phrase) {
 		return phrase;
@@ -24,7 +28,7 @@ public class PhraseServiceImpl implements PhraseService {
 	}
 
 	public List<Phrase> getAllPhrases() {
-		return phraseDao.getAllPhrases();
+		return phraseDataService.getAllPhrases();
 		
 //		List<Phrase> tempList = new ArrayList<Phrase>();
 //		tempList.add(new Phrase(1L, "IDE", "Integrated Development Dnvironment",
