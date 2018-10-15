@@ -9,15 +9,15 @@ import org.springframework.stereotype.Service;
 import org.mybatis.spring.annotation.MapperScan;
 
 import com.systema.glossary.model.phrase.Phrase;
-import com.systema.glossary.service.database.PhraseDataService;
+import com.systema.glossary.service.database.phrase.mapper.PhraseMapper;
 
 @ComponentScan(basePackages = { "com.systema.glossary" })
-//@MapperScan("com.systema.glossary.service.database")
+@MapperScan("com.systema.glossary.service.database.phrase.mapper")
 @Service("phrase-service")
 public class PhraseServiceImpl implements PhraseService {
 	
 	@Autowired(required=false)
-	public PhraseDataService phraseDataService;
+	public PhraseMapper phraseMapper;
 
 	public Phrase createPhrase(Phrase phrase) {
 		return phrase;
@@ -28,7 +28,7 @@ public class PhraseServiceImpl implements PhraseService {
 	}
 
 	public List<Phrase> getAllPhrases() {
-		return phraseDataService.getAllPhrases();
+		return phraseMapper.getAllPhrases();
 		
 //		List<Phrase> tempList = new ArrayList<Phrase>();
 //		tempList.add(new Phrase(1L, "IDE", "Integrated Development Dnvironment",
