@@ -1,15 +1,17 @@
 package com.systema.glossary.model.phrase;
 
+import java.math.BigDecimal;
+
 public class Phrase {
 	
-	public Phrase(Long id, String acronym, String expression, String description) {
+	public Phrase(BigDecimal id, String acronym, String expression, String description) {
 		this.id = id;
 		this.acronym = acronym;
 		this.expression = expression;
 		this.description = description;
 	}
 	
-	protected long id;
+	protected BigDecimal id;
 	
 	protected String acronym;
 
@@ -17,7 +19,7 @@ public class Phrase {
 	
 	protected String description;
 	
-	public Long getId() { 
+	public BigDecimal getId() { 
 		return this.id;
 	}
 	

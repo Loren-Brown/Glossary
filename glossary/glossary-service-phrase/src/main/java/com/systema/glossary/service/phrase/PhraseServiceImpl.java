@@ -1,6 +1,7 @@
 package com.systema.glossary.service.phrase;
 
 import java.util.List;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class PhraseServiceImpl implements PhraseService {
 		return phrase;
 	}
 
-	public void deletePhrase(Long id) {
+	public void deletePhrase(BigDecimal id) {
 		return;
 	}
 
@@ -41,7 +42,7 @@ public class PhraseServiceImpl implements PhraseService {
 //		return tempList;
 	}
 
-	public Phrase getPhraseById(Long id) {
+	public Phrase getPhraseById(BigDecimal id) {
 		Phrase tempPhrase = new Phrase(id, "IDE", "Integrated Development Dnvironment",
 				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger.");
 
@@ -51,11 +52,11 @@ public class PhraseServiceImpl implements PhraseService {
 	public List<Phrase> getPhraseListByTextMatch(String searchText) {
 
 		List<Phrase> tempList = new ArrayList<Phrase>();
-		tempList.add(new Phrase(1L, "IDE", "Integrated Development Dnvironment",
+		tempList.add(new Phrase(new BigDecimal("1"), "IDE", "Integrated Development Dnvironment",
 				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
-		tempList.add(new Phrase(2L, "IDE", "Integrated Development Dnvironment",
+		tempList.add(new Phrase(new BigDecimal("2"), "IDE", "Integrated Development Dnvironment",
 				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
-		tempList.add(new Phrase(3L, "IDE", "Integrated Development Dnvironment",
+		tempList.add(new Phrase(new BigDecimal("3"), "IDE", "Integrated Development Dnvironment",
 				"An integrated development environment (IDE) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger."));
 
 		return tempList;

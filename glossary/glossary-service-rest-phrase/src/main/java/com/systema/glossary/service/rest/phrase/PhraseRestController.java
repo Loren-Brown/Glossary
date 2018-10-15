@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
+import java.math.BigDecimal;
 
 import com.systema.glossary.model.phrase.Phrase;
 import com.systema.glossary.service.phrase.PhraseService;
@@ -33,7 +34,7 @@ public class PhraseRestController {
 
 	@RequestMapping(value = "phrases/{id}", method = RequestMethod.GET)
 	@ResponseBody
-	public Phrase getPhraseById(@PathVariable("id") long id) {
+	public Phrase getPhraseById(@PathVariable("id") BigDecimal id) {
 		return phraseService.getPhraseById(id);
 	}
 
@@ -45,7 +46,7 @@ public class PhraseRestController {
 
 	@RequestMapping(value = "/phrases/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public void deletePhrase(@PathVariable("id") long id) {
+	public void deletePhrase(@PathVariable("id") BigDecimal id) {
 		phraseService.deletePhrase(id);
 		return;
 	}
